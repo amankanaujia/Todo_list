@@ -138,8 +138,10 @@ input {
 </div>
 {% for todo in todos reversed %}
 <ul id="myUL">
-  <li>{{todo.title | title}}<span class="close"><a style="text-decoration: none; color: black;" href="delete/{{todo.id}}">Delete</a></span></li>
+  <li>{{todo.title | title}}<span class="close"><a style="text-decoration: none; color: black;" href="{% url 'delete' todo.id %}">Delete</a></span></li>
 </ul>
 {% endfor %}
 </body>
 </html>
+
+<!-- delete/{{todo.id}} -->
